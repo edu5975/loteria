@@ -1,0 +1,83 @@
+# --- Archivos compilados de Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Entornos virtuales ---
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Archivos de dependencias ---
+*.egg-info/
+.eggs/
+*.egg
+dist/
+build/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+
+# --- Archivos de testing ---
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+.tox/
+.nox/
+
+# --- Archivos de configuración local ---
+*.env
+*.ini
+*.cfg
+*.toml
+*.yaml
+*.yml
+.settings/
+
+# --- Jupyter Notebook ---
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# --- Archivos de IDE ---
+.vscode/
+.idea/
+*.iml
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Otros ---
+*.mo
+*.pot
+*.sqlite3
+db.sqlite3
+
+# --- Archivos de SO ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Proyecto Lotería (archivos generados) ---
+cartas.pdf
+tableros.pdf
+*.pptx
+/output/
+images/
