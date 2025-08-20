@@ -1,6 +1,6 @@
 # 🎲 Lotería de Harry Potter
 
-Generador de **lotería personalizada** con temática de _Harry Potter_ en formato **PDF**.  
+Generador de **lotería personalizada** con temática en formato **PDF**.  
 Crea automáticamente:
 
 - **Cartas** → 54 imágenes, 16 por hoja (4x4), con recorte tipo _cover_, marco y líneas de corte.
@@ -10,14 +10,16 @@ Crea automáticamente:
 
 ## 📂 Estructura del proyecto
 
+```
 loteria/
-├── make_loteria_pdf.py # Script principal
-├── cards_template.csv # Plantilla de cartas (id, name, filename)
-├── images/ # Carpeta con las imágenes de las cartas
-├── cartas.pdf # (Salida) Todas las cartas, 16 por hoja
-├── tableros.pdf # (Salida) Tableros de juego, 1 por hoja
-├── README.md # Este archivo
+├── make_loteria_pdf.py   # Script principal
+├── cards_template.csv    # Plantilla de cartas (id, name, filename)
+├── images/               # Carpeta con las imágenes de las cartas
+├── cartas.pdf            # (Salida) Todas las cartas, 16 por hoja
+├── tableros.pdf          # (Salida) Tableros de juego, 1 por hoja
+├── README.md             # Este archivo
 └── .gitignore
+```
 
 ---
 
@@ -29,41 +31,56 @@ loteria/
   pip install reportlab pillow pandas
   ```
 
-📋 Uso
+---
 
-Prepara tu CSV (cards_template.csv) con las columnas:
+## 📋 Uso
 
-id → número de la carta (1 a 54).
+1. Prepara tu **CSV** (`cards_template.csv`) con las columnas:
 
-name → nombre de la carta.
+   - `id` → número de la carta (1 a 54).
+   - `name` → nombre de la carta.
+   - `filename` → nombre del archivo de la imagen (ubicada en `images/`).
 
-filename → nombre del archivo de la imagen (ubicada en images/).
+   Ejemplo:
 
-Ejemplo:
+   ```csv
+   id,name,filename
+   1,Harry Potter,harry.jpg
+   2,Hermione Granger,hermione.png
+   3,Ron Weasley,ron.jpg
+   ...
+   ```
 
-id,name,filename
-1,Harry Potter,harry.jpg
-2,Hermione Granger,hermione.png
-3,Ron Weasley,ron.jpg
-...
+2. Coloca las imágenes en la carpeta `images/`.
 
-Coloca las imágenes en la carpeta images/.
+3. Genera los PDFs ejecutando:
 
-Genera los PDFs ejecutando:
+   ```bash
+   python make_loteria_pdf.py --csv cards_template.csv --images images --seed 42 --verbose
+   ```
 
-python make_loteria_pdf.py --csv cards_template.csv --images images --seed 42 --verbose
+   👉 El script produce:
 
-👉 El script produce:
+   - `cartas.pdf`
+   - `tableros.pdf`
 
-cartas.pdf
-tableros.pdf
+---
 
-🎨 Personalización
+## 🎨 Personalización
 
-El script dibuja fondo tipo pergamino y marcos dorados.
-El texto está en negro y usa la fuente Helvetica.
-El layout asegura que no haya solapamientos entre imágenes y texto.
+- El script dibuja **fondo** y marcos dorados.
+- El texto está en **negro** y usa la fuente _Helvetica_.
+- El layout asegura que no haya solapamientos entre imágenes y texto.
 
-🧙 Objetivo
+---
 
-Proyecto creado para que puedas hacer tus propias loterias tematicas.
+## 🧙 Créditos
+
+Proyecto creado para un cumpleaños temático lo que quieras.  
+Inspirado en la clásica **Lotería Mexicana** ✨.
+
+---
+
+## 📜 Licencia
+
+Uso personal y educativo. No comercial.
